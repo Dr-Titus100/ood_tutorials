@@ -1,38 +1,8 @@
-<%- if usertutorial== "Fundamentals of R" -%>
-    <%- user_tutorial = "#{usertutorial}" 
-        form_id = " "
-        form_args = "/rnode/#{host}/#{port}/"
-        method = "get"
-        target = "_blank"
-        onsubmit = " "
-    -%>
-
-<%- elsif usertutorial== "Data Science in R" -%>
-    <%- user_tutorial = "#{usertutorial}" 
-        form_id = " "
-        form_args = "/rnode/#{host}/#{port}/"
-        method = "get"
-        target = "_blank"
-        onsubmit = " "
-    -%>
-
-<%- elsif usertutorial== "Introduction to Python" -%>
+<%- if usertutorial== "test" -%>
     <%- user_tutorial = "#{usertutorial}" 
         base_url  = "/node/#{host}/#{port}"
         login_url = "#{base_url}/login"
-        next_url  = "#{base_url}/notebooks/Intro_Python.ipynb"
-        form_args = "#{login_url}?next=#{next_url}"
-        form_id = "juypyter_form#{login_url.gsub('/', '_')}"
-        method = "post"
-        target = "_blank"
-        onsubmit = "changeTarget()"
-    -%>
-    
-<%- elsif usertutorial== "Introduction to Julia" -%>
-    <%- user_tutorial = "#{usertutorial}" 
-        base_url  = "/node/#{host}/#{port}"
-        login_url = "#{base_url}/login"
-        next_url  = "#{base_url}/notebooks/IntroductionToJulia.ipynb"
+        next_url  = "#{base_url}/notebooks/test.ipynb"
         form_args = "#{login_url}?next=#{next_url}"
         form_id = "juypyter_form#{login_url.gsub('/', '_')}"
         method = "post"

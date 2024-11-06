@@ -43,10 +43,10 @@ ood_dir="'$(pwd)'"
 
 
 ## Introduction to Python Tutorial
-<%- elsif context.tutorial== "Introduction to Python" -%>
-    tutorial_doc="Intro_Python.ipynb"
+<%- elsif context.tutorial== "test" -%>
+    tutorial_doc="test.ipynb"
     module purge
-    module load foss/2022b Python/3.10.8 jupyter-server/2.7.0 JupyterNotebook/7.0.3 SciPy-bundle/2023.02 matplotlib/3.7.0 
+    module load test_jupyter
     
     # Benchmark info
     echo "TIMING - Starting Tutorials OnDemand at: $(date)"
