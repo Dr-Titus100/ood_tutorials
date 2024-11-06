@@ -53,7 +53,7 @@ ood_dir="'$(pwd)'"
     echo "Introduction to Python"
     # Launch Introduction to Python tutorial
     set -x
-    jupyter notebook --config="${CONFIG_FILE}" $tutorial_doc
+    jupyter lab --config="${CONFIG_FILE}" $tutorial_doc
 
 ## Introduction to Julia Tutorial
 <%- elsif context.tutorial== "Introduction to Julia" -%>
