@@ -41,8 +41,20 @@ ood_dir="'$(pwd)'"
     set -x
     R -e "rmarkdown::run(file.path($ood_dir,'DataScienceInR.Rmd'),shiny_args=list(port=$port,host='0.0.0.0'))"
 
+## Alphafold3 Tutorial
+<%- elsif context.tutorial== "Alphafold3" -%>
+    tutorial_doc="alphafold3.ipynb"
+    module purge
+    module load alphafold/3.0.0
+    
+    # Benchmark info
+    echo "TIMING - Starting Tutorials OnDemand at: $(date)"
+    echo "Alphafold3 Tutorial"
+    # Launch tutorial
+    set -x
+    jupyter notebook --config="${CONFIG_FILE}" $tutorial_doc
 
-## Introduction to Python Tutorial
+## Test Tutorial
 <%- elsif context.tutorial== "test" -%>
     tutorial_doc="test.ipynb"
     module purge
