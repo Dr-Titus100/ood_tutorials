@@ -12,7 +12,7 @@ ood_dir="'$(pwd)'"
 ################## Tutorial-dependent commands #####################
 
 ## Alphafold3 Tutorial
-<%- elsif context.tutorial== "Alphafold3" -%>
+<%- if context.tutorial== "Alphafold3" -%>
     tutorial_doc="alphafold3.ipynb"
     module purge
     module load alphafold/3.0.0
