@@ -25,10 +25,11 @@ ood_dir="'$(pwd)'"
     jupyter notebook --config="${CONFIG_FILE}" $tutorial_doc
 
 ## Pytorch Tutorial
-<%- elsif context.tutorial== "pytorch" -%>
+<%- elsif context.tutorial== "Pytorch" -%>
     tutorial_doc="pytorch_tutorial.ipynb"
     module purge
     # Load any modules your tutorial needs here
+    module load pytorch_2.4.1_tensorflow_2.17_cuda_12.4
     
     # Benchmark info
     echo "TIMING - Starting Tutorials OnDemand at: $(date)"
@@ -49,4 +50,6 @@ ood_dir="'$(pwd)'"
     # Launch Introduction to Python tutorial
     set -x
     jupyter notebook --config="${CONFIG_FILE}" $tutorial_doc
+<%- else -%>
+    echo "context.tutorial not found"
 <%- end -%>

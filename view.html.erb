@@ -24,6 +24,18 @@
     -%>
     
 <%- end -%>
+<%- if usertutorial== "Pytorch" -%>
+    <%- user_tutorial = "#{usertutorial}"
+        base_url  = "/node/#{host}/#{port}"
+        login_url = "#{base_url}/login"
+        next_url  = "#{base_url}/notebooks/pytorch_tutorial.ipynb"
+        action = "#{login_url}?next=#{next_url}"
+        form_id = "jupyter_form#{login_url.gsub('/', '_')}"
+        method = "post"
+        target = "_blank"
+        onsubmit = "changeTarget()"
+    -%>
+<%- end -%>
 
 <form id="<%= form_id %>" action="<%= action %>" method="<%= method %>" target="<%= target %>" onsubmit="<%= onsubmit %>">
     <input type="hidden" name="password" value="<%= password %>">
