@@ -1,3 +1,20 @@
+<%-
+  case tutorial
+  when "Pytorch"
+    slurm_args = [
+      "--nodes", "1",
+      "-c", "14",
+      "--gres=gpu:1",
+      "--partition", "ondemand-p100"
+    ]
+  else
+    slurm_args = [
+      "--nodes", "1",
+      "-c", "4",
+      "--partition", "ondemand"
+    ]
+  end
+%>
 ---
 batch_connect:
   template: "basic"
@@ -5,10 +22,8 @@ batch_connect:
     - usertutorial
 script:
   native:
-    - "--nodes=1"
-    - "--ntasks=1"
-    - "--cpus-per-task=4"
-    - "--mem=5G"
-    - "--partition=ondemand"
+  <%- slurm_args.each do |arg| %>
+    - "<%= arg %>"
+  <%- end %>
     - "--time=<%= num_hours.to_i %>:00:00"
     - "-J Tutorial"
